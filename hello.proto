@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package hello;
+
+service ProductService {
+  rpc ListProduct(RequestType) returns (stream Product) {};
+  rpc AddProduct(Product) returns (RequestType) {};
+}
+
+message ResponseType {
+
+}
+
+
+message RequestType {
+
+}
+
+message Product {
+  string name = 1;
+  int32 price = 2;
+}
